@@ -9,7 +9,7 @@ export class RepositoriesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
