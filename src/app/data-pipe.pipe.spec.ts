@@ -1,4 +1,4 @@
-import { DatePipePipe } from './date-pipe.pipe';
+import { DatePipePipe } from './data-pipe.pipe';
 
 describe('DatePipePipe', () => {
   it('create an instance', () => {
