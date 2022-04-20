@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from './user';
-import { Repos } from './repos'
+import { Repos } from './repo'
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 
@@ -11,8 +11,7 @@ import { environment } from 'src/environments/environment.prod';
 export class UserserviceService {
   foundUser: User;
   allRepos: Repos;
- 
-
+  
   constructor(private http: HttpClient) {
     this.foundUser = new User("","","","",0,0,0,"",new Date);
     this.allRepos = new Repos("","","",new Date,0,0,"");
@@ -33,7 +32,7 @@ export class UserserviceService {
     }
 
     return new Promise<void>((resolve, reject) => {
-      this.http.get<Responce>(''+searchName+'?access_token='+environment.apiKey).toPromise().then(
+      this.http.get<Responce |any>('https://api.github.com/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(
         (result) => {
           this.foundUser = result;
           console.log(this.foundUser);
@@ -46,7 +45,7 @@ export class UserserviceService {
       );
     });
   }
-  getReopos(searchName: string){
+  getRepos(searchName: string){
     interface Repos{
       name:string;
       html_url:string;
@@ -57,7 +56,7 @@ export class UserserviceService {
       created_at:Date;
     }
     return new Promise<void>((resolve,reject)=>{
-      this.http.get<Repos>(''+searchName+"/repos?order=created&sort=asc?access_token="+environment.apiKey).toPromise().then(
+      this.http.get<Repos | any>('https://api.github.com/users/'+searchName+"/repos?order=created&sort=asc?access_token="+environment.apiKey).toPromise().then(
         (results) => {
           this.allRepos = results;
           resolve();
@@ -70,4 +69,8 @@ export class UserserviceService {
     });
   }
 }
+
+
+
+  
 
