@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Userservicesevice } from '../userservices.services'
-import { Repos } from ',,/Repos'
+import { UserserviceService } from '../userservices.services'
+import { Repos } from '../repo'
 @Component({
   selector: 'app-repositories',
   templateUrl: './repositories.component.html',
@@ -8,16 +8,17 @@ import { Repos } from ',,/Repos'
 })
 export class RepositoriesComponent implements OnInit {
   
-  repo: Repos;
+  repo: Repos | undefined;
+  repoService: any;
   constructor() { }
 
-  repoSearch(searchName){
+  repoSearch(searchName: string){
     this.repoService.getReopos(searchName).then(
-      (results)=>{
+      (results: any)=>{
         this.repo =this.repoService.allRepos
         console.log(this.repo);
       },
-      (error)=>{
+      (error: any)=>{
         console.log(error);
       }
     );

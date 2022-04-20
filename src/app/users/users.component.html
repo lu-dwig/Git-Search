@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <ng-progress></ng-progress>
+    <!-- <ng-progress></ng-progress> -->
     <div class="overlay">
         <app-search-form (searchOutput)= "searchs($event)"></app-search-form>
         <div class="container content">
@@ -7,7 +7,7 @@
                 <div class="col-sm-4" id="imgcard">
                     <div class="userimage">
                         <div class="card-img-top">
-                            <img src="{{}}" alt="">
+                            <img src="" alt="">
                         </div> 
                         <div class="card-body">
                             <span  class="name"><i class="fa fa-user" style="font-size:20px"></i> &nbsp;{{user.login}}</span> <a href="{{user.html_url}}"><button class="btn-outline-success btn btn-sm"><i class="fa fa-github" style="font-size:20px"></i> &nbsp; <span id="profile">Github</span> </button></a>
@@ -33,13 +33,13 @@
             </div> 
         </div>
         <div id="click" class="text-center">
-            <a href="#reps"><img src="/home/ludwig/Git-Search-app/src/assets/images/mouse_click.png" alt=" mouse_click" id="mouse-click"></a> 
+            <a href="#reps"><img src="./assets/images/mouse_click.png" alt=" mouse_click" id="mouse-click"></a> 
         </div>
         <div class="text-center repos" id="reps">
             <h2>Repositories</h2>
         </div>
         <div class="container allrepos">
-            <div class="card" appHighlight *ngFor="let repository of repo" style="width: 22rem;" class="repo">
+            <div class="card" appHighlight *ngForof="let repository of repo" style="width: 22rem;" class="repo">
                 <div class="card-body" >
                     <h5 class="card-title"><span class="top">Repo Name:</span> &nbsp;{{repository.name}} </h5>
                     <div class="card-text">

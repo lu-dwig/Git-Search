@@ -11,6 +11,7 @@ import { UsersComponent } from './users/users.component';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { UserserviceService } from './userservices.services';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UserserviceService } from './userservices.services';
     BrowserModule,
     AppRoutingModule,
     NgProgressHttpClientModule,
-    NgProgressModule
+    NgProgressModule,
+    FormsModule
   ],
   providers: [UserserviceService],
   bootstrap: [AppComponent]
