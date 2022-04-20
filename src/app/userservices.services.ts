@@ -46,7 +46,7 @@ export class UserserviceService {
       );
     });
   }
-  getReopos(searchName: string){
+  getRepos(searchName: string){
     interface Repos{
       name:string;
       html_url:string;
