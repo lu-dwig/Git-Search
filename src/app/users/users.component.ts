@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
 
   searchs(searchName: any) {
     this.myService.searchUSer(searchName).then(
-      (success: any)=>{
+      (_success: any)=>{
         this.user = this.myService.foundUser;
       },
       (error: any)=>{
@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
       }
     );
       this.repoService.getReopos(searchName).then(
-        (results: any)=>{
+        (_results: any)=>{
           this.repo =this.repoService.allRepos
           console.log(this.repo);
         },
@@ -34,6 +34,7 @@ export class UsersComponent implements OnInit {
 
 
   ngOnInit() {
+    this.searchs('lu-dwig')
   }
 
 }
