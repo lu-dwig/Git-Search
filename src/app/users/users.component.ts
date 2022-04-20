@@ -15,7 +15,9 @@ export class UsersComponent implements OnInit {
   searchs(searchName: any) {
     this.myService.searchUSer(searchName).then(
       (_success: any)=>{
-        this.user = this.myService.foundUser;
+        console.log(_success);
+        
+        // this.user = this.myService.foundUser;
       },
       (error: any)=>{
         console.log(error)
