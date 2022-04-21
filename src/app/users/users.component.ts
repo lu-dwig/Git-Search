@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
       (_success: any)=>{
         console.log(_success);
         
-        // this.user = this.myService.foundUser;
+        this.user = this.myService.foundUser;
       },
       (error: any)=>{
         console.log(error)

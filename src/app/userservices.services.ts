@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { User } from './user';
 import { Repos } from './repo'
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.prod';
+// import { environment } from '/environments/environment.production';
 
-
+import { environment } from '../environments/environment'
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +18,7 @@ export class UserserviceService {
     this.allRepos = new Repos("","","",new Date,0,0,"");
   }
 
-  searchUSer(searchName: string) {
+  searchUSer(_searchName: string) {
    
     interface Responce {
       url:string,
